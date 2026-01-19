@@ -1,22 +1,18 @@
-import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { NextResponse } from 'next/server';
+import { getDocumentsByField } from '@/lib/firebase/firestore';
 
 export async function GET(request, { params }) {
     try {
-        const { slug } = params
-        const destinationsPath = path.join(process.cwd(), 'data', 'destinations.json')
-        const destinationsData = fs.readFileSync(destinationsPath, 'utf-8')
-        const destinations = JSON.parse(destinationsData)
+        const { slug } = params;
+        const destinations = await getDocumentsByField('destinations', 'slug', slug);
 
-        const destination = destinations.find(d => d.slug === slug)
-
-        if (!destination) {
-            return NextResponse.json({ error: 'Destination not found' }, { status: 404 })
+        if (!destinations || destinations.length === 0) {
+            return NextResponse.json({ error: 'Destination not found' }, { status: 404 });
         }
 
-        return NextResponse.json(destination)
+        return NextResponse.json(destinations[0]);
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to fetch destination' }, { status: 500 })
+        console.error('Error fetching destination:', error);
+        return NextResponse.json({ error: 'Failed to fetch destination' }, { status: 500 });
     }
 }

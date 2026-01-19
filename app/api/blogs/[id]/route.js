@@ -1,92 +1,67 @@
-import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { NextResponse } from 'next/server';
+import { getDocument, updateDocument, deleteDocument } from '@/lib/firebase/firestore';
 
 export async function GET(request, { params }) {
     try {
-        const { id } = params
-        const blogsPath = path.join(process.cwd(), 'data', 'blogs.json')
-        const blogsData = fs.readFileSync(blogsPath, 'utf-8')
-        const blogs = JSON.parse(blogsData)
-
-        const blog = blogs.find(b => b.id === parseInt(id))
+        const { id } = params;
+        const blog = await getDocument('blogs', id);
 
         if (!blog) {
-            return NextResponse.json({ error: 'Blog not found' }, { status: 404 })
+            return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
         }
 
-        return NextResponse.json(blog)
+        return NextResponse.json(blog);
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to fetch blog' }, { status: 500 })
+        console.error('Error fetching blog:', error);
+        return NextResponse.json({ error: 'Failed to fetch blog' }, { status: 500 });
     }
 }
 
 export async function PUT(request, { params }) {
     try {
-        const { id } = params
-        const body = await request.json()
+        const { id } = params;
+        const body = await request.json();
 
         // Verify admin token
-        const token = request.headers.get('Authorization')?.replace('Bearer ', '')
+        const token = request.headers.get('Authorization')?.replace('Bearer ', '');
         if (token !== 'admin-token-secret') {
-            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-        }
-
-        const blogsPath = path.join(process.cwd(), 'data', 'blogs.json')
-        const blogsData = fs.readFileSync(blogsPath, 'utf-8')
-        let blogs = JSON.parse(blogsData)
-
-        const blogIndex = blogs.findIndex(b => b.id === parseInt(id))
-
-        if (blogIndex === -1) {
-            return NextResponse.json({ error: 'Blog not found' }, { status: 404 })
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
         // Update blog
-        blogs[blogIndex] = {
-            ...blogs[blogIndex],
+        const updateData = {
             title: body.title,
             slug: body.slug,
             excerpt: body.excerpt,
             image: body.image,
             content: body.content,
-            author: body.author || blogs[blogIndex].author,
-        }
+            author: body.author,
+        };
 
-        fs.writeFileSync(blogsPath, JSON.stringify(blogs, null, 2))
+        await updateDocument('blogs', id, updateData);
 
-        return NextResponse.json(blogs[blogIndex])
+        return NextResponse.json({ id, ...updateData });
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to update blog' }, { status: 500 })
+        console.error('Error updating blog:', error);
+        return NextResponse.json({ error: 'Failed to update blog' }, { status: 500 });
     }
 }
 
 export async function DELETE(request, { params }) {
     try {
-        const { id } = params
+        const { id } = params;
 
         // Verify admin token
-        const token = request.headers.get('Authorization')?.replace('Bearer ', '')
+        const token = request.headers.get('Authorization')?.replace('Bearer ', '');
         if (token !== 'admin-token-secret') {
-            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
-        const blogsPath = path.join(process.cwd(), 'data', 'blogs.json')
-        const blogsData = fs.readFileSync(blogsPath, 'utf-8')
-        let blogs = JSON.parse(blogsData)
+        await deleteDocument('blogs', id);
 
-        const blogIndex = blogs.findIndex(b => b.id === parseInt(id))
-
-        if (blogIndex === -1) {
-            return NextResponse.json({ error: 'Blog not found' }, { status: 404 })
-        }
-
-        // Delete blog
-        blogs.splice(blogIndex, 1)
-        fs.writeFileSync(blogsPath, JSON.stringify(blogs, null, 2))
-
-        return NextResponse.json({ message: 'Blog deleted successfully' })
+        return NextResponse.json({ message: 'Blog deleted successfully' });
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to delete blog' }, { status: 500 })
+        console.error('Error deleting blog:', error);
+        return NextResponse.json({ error: 'Failed to delete blog' }, { status: 500 });
     }
 }

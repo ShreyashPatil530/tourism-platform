@@ -1,18 +1,12 @@
-import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { NextResponse } from 'next/server';
+import { getCollection, addDocument } from '@/lib/firebase/firestore';
 
 export async function POST(request) {
     try {
-        const body = await request.json()
-
-        const bookingsPath = path.join(process.cwd(), 'data', 'bookings.json')
-        const bookingsData = fs.readFileSync(bookingsPath, 'utf-8')
-        const bookings = JSON.parse(bookingsData)
+        const body = await request.json();
 
         // Create new booking
         const newBooking = {
-            id: bookings.length > 0 ? Math.max(...bookings.map(b => b.id)) + 1 : 1,
             packageName: body.packageName,
             name: body.name,
             email: body.email,
@@ -22,29 +16,27 @@ export async function POST(request) {
             message: body.message || '',
             status: 'pending',
             createdAt: new Date().toISOString(),
-        }
+        };
 
-        bookings.push(newBooking)
-        fs.writeFileSync(bookingsPath, JSON.stringify(bookings, null, 2))
+        const booking = await addDocument('bookings', newBooking);
 
         return NextResponse.json({
             success: true,
-            booking: newBooking,
+            booking: booking,
             message: 'Booking request submitted successfully! We will contact you soon.'
-        }, { status: 201 })
+        }, { status: 201 });
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to create booking' }, { status: 500 })
+        console.error('Error creating booking:', error);
+        return NextResponse.json({ error: 'Failed to create booking' }, { status: 500 });
     }
 }
 
 export async function GET() {
     try {
-        const bookingsPath = path.join(process.cwd(), 'data', 'bookings.json')
-        const bookingsData = fs.readFileSync(bookingsPath, 'utf-8')
-        const bookings = JSON.parse(bookingsData)
-
-        return NextResponse.json(bookings)
+        const bookings = await getCollection('bookings');
+        return NextResponse.json(bookings);
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to fetch bookings' }, { status: 500 })
+        console.error('Error fetching bookings:', error);
+        return NextResponse.json({ error: 'Failed to fetch bookings' }, { status: 500 });
     }
 }
