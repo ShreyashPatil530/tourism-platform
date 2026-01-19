@@ -93,4 +93,4 @@ Built for portfolio and commercial use.
 
 ## 👨‍💻 Author
 
-Travel Pro Tourism Platform - 2026
+Shreyash Patil
