@@ -14,12 +14,48 @@ export default function ContactPage() {
         subject: '',
         message: '',
     })
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' })
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        alert('Thank you for your message! We will get back to you soon.')
-        setFormData({ name: '', email: '', subject: '', message: '' })
+        setIsSubmitting(true)
+        setSubmitStatus({ type: '', message: '' })
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+
+            const data = await response.json()
+
+            if (response.ok) {
+                setSubmitStatus({
+                    type: 'success',
+                    message: data.message || 'Thank you for your message! We will get back to you soon.'
+                })
+                setFormData({ name: '', email: '', subject: '', message: '' })
+            } else {
+                setSubmitStatus({
+                    type: 'error',
+                    message: data.error || 'Failed to submit form. Please try again.'
+                })
+            }
+        } catch (error) {
+            console.error('Contact form error:', error)
+            setSubmitStatus({
+                type: 'error',
+                message: 'Network error. Please check your connection and try again.'
+            })
+        } finally {
+            setIsSubmitting(false)
+        }
     }
+
 
     const contactInfo = [
         {
@@ -126,9 +162,33 @@ export default function ContactPage() {
                                     required
                                 />
                             </div>
-                            <Button type="submit" className="w-full group">
-                                <Send className="inline-block mr-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                Send Message
+
+                            {/* Status Message */}
+                            {submitStatus.message && (
+                                <div className={`p-4 rounded-xl ${submitStatus.type === 'success'
+                                        ? 'bg-green-500/10 border border-green-500/20 text-green-400'
+                                        : 'bg-red-500/10 border border-red-500/20 text-red-400'
+                                    }`}>
+                                    {submitStatus.message}
+                                </div>
+                            )}
+
+                            <Button
+                                type="submit"
+                                className="w-full group"
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? (
+                                    <>
+                                        <span className="inline-block mr-2 w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                        Sending...
+                                    </>
+                                ) : (
+                                    <>
+                                        <Send className="inline-block mr-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                        Send Message
+                                    </>
+                                )}
                             </Button>
                         </form>
                     </Card>
