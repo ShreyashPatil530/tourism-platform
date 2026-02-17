@@ -37,7 +37,7 @@ export default function Navbar() {
                         <div className="bg-gradient-primary p-2 rounded-xl group-hover:scale-110 transition-transform duration-300">
                             <Plane className="w-6 h-6 text-white" />
                         </div>
-                        <span className="text-2xl font-bold text-gradient">TravelPro</span>
+                        <span className="text-2xl font-bold text-gradient">Travel AI Pro</span>
                     </Link>
 
                     {/* Desktop Navigation */}

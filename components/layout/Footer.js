@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                     {/* About */}
                     <div>
-                        <h3 className="text-xl font-bold text-gradient mb-4">TravelPro</h3>
+                        <h3 className="text-xl font-bold text-gradient mb-4">Travel AI Pro</h3>
                         <p className="text-gray-400 mb-4">
                             Premium travel experiences crafted for modern explorers. Discover the world in a new way.
                         </p>
@@ -53,7 +53,7 @@ export default function Footer() {
                         <ul className="space-y-3">
                             <li className="flex items-center space-x-2 text-gray-400">
                                 <Mail className="w-4 h-4" />
-                                <span>info@travelpro.com</span>
+                                <span>info@travelaipro.com</span>
                             </li>
                             <li className="flex items-center space-x-2 text-gray-400">
                                 <Phone className="w-4 h-4" />
@@ -68,7 +68,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-white/10 pt-8 text-center text-gray-500">
-                    <p>&copy; 2026 TravelPro. All rights reserved. Built with Shreyash Patil for explorers.</p>
+                    <p>&copy; 2026 Travel AI Pro. All rights reserved. Built with Shreyash Patil for explorers.</p>
                 </div>
             </div>
         </footer>

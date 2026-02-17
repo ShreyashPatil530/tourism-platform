@@ -6,7 +6,7 @@ import Footer from '@/components/layout/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-    title: 'Premium Tourism - Discover the World',
+    title: 'Travel AI Pro - Discover the World',
     description: 'Premium travel experiences crafted for modern explorers',
     keywords: 'tourism, travel, destinations, tour packages, luxury travel',
 }

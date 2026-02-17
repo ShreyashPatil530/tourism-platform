@@ -145,7 +145,7 @@ const ADMIN_CREDENTIALS = {
 ### Enable Custom Domain (Optional)
 1. Go to **Project Settings** → **Domains**
 2. Click **"Add Domain"**
-3. Enter your custom domain (e.g., `travelpro.com`)
+3. Enter your custom domain (e.g., `travelaipro.com`)
 4. Follow DNS configuration instructions
 5. Vercel handles SSL automatically!
 

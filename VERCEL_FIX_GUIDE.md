@@ -73,6 +73,7 @@ Then test blog creation:
 
 ---
 
+
 ## Why This Happens
 
 Vercel deployments DON'T automatically copy your `.env.local` file for security reasons. You must manually add environment variables in the Vercel dashboard.
