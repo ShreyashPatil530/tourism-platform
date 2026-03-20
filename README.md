@@ -1,4 +1,4 @@
-# Travel AI Pro - Complete Tourism Solution
+# Frontend - Complete Tourism Solution
 
 **Live Frontend**: [https://travel-ai-pro.onrender.com](https://travel-ai-pro.onrender.com)  
 **Live Backend**: [https://travel-ai-pro-backend.onrender.com](https://travel-ai-pro-backend.onrender.com)
@@ -11,7 +11,7 @@ A full-stack premium tourism platform featuring a Next.js 15 frontend and a Node
 
 This project is divided into two main modules:
 
-1.  **[Frontend (Travel AI Pro)](./Travel%20AI%20Pro/README.md)**: The user interface and admin dashboard built with Next.js, Framer Motion, and Tailwind CSS.
+1.  **[Frontend (Frontend)](./Travel%20AI%20Pro/README.md)**: The user interface and admin dashboard built with Next.js, Framer Motion, and Tailwind CSS.
 2.  **[Backend (Backend)](./Backend/README.md)**: The RESTful API and database management built with Node.js, Express, and MongoDB.
 
 ---
@@ -38,7 +38,7 @@ npm run dev
 **Shreyash Patil**
 *Lead Architect & Developer*
 
-For detailed technical documentation, please refer to the README files inside the respective `Travel AI Pro` and `Backend` folders.
+For detailed technical documentation, please refer to the README files inside the respective `Frontend` and `Backend` folders.
 
 ---
 
