@@ -12,5 +12,6 @@ yarn-error.log*
 .vercel
 .DS_Store
 Backend/node_modules/
+"Travel AI Pro/"
 frontend/node_modules/
 frontend/.next/
