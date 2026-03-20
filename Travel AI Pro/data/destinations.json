@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "name": "Bali, Indonesia",
+        "slug": "bali-indonesia",
+        "description": "Experience the magical blend of culture, nature, and spirituality",
+        "image": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80",
+        "rating": 4.9,
+        "tours": 24,
+        "about": "Bali is an Indonesian island known for its forested volcanic mountains, iconic rice paddies, beaches and coral reefs. The island is home to religious sites such as cliffside Uluwatu Temple. To the south, the beachside city of Kuta has lively bars, while Seminyak, Sanur and Nusa Dua are popular resort towns.",
+        "highlights": [
+            "Ancient temples and spiritual experiences",
+            "World-class surfing beaches",
+            "Traditional Balinese dance performances",
+            "Stunning rice terraces",
+            "Vibrant nightlife and beach clubs",
+            "Yoga and wellness retreats"
+        ],
+        "bestTime": "April to October (Dry Season)",
+        "currency": "Indonesian Rupiah (IDR)",
+        "language": "Indonesian, Balinese"
+    },
+    {
+        "id": 2,
+        "name": "Swiss Alps",
+        "slug": "swiss-alps",
+        "description": "Breathtaking mountain scenery and world-class skiing",
+        "image": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=80",
+        "rating": 4.8,
+        "tours": 18,
+        "about": "The Swiss Alps are the portion of the Alps mountain range that lies within Switzerland. Known for their stunning beauty, they offer world-class skiing in winter and incredible hiking in summer. Iconic peaks like the Matterhorn and Jungfrau attract visitors year-round.",
+        "highlights": [
+            "World-class ski resorts",
+            "Scenic train journeys",
+            "Luxury alpine hotels",
+            "Mountain hiking trails",
+            "Swiss chocolate and cheese",
+            "Pristine lakes and valleys"
+        ],
+        "bestTime": "December to March (Skiing), June to September (Hiking)",
+        "currency": "Swiss Franc (CHF)",
+        "language": "German, French, Italian"
+    },
+    {
+        "id": 3,
+        "name": "Paris, France",
+        "slug": "paris-france",
+        "description": "The epitome of romance, art, and culinary excellence",
+        "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=80",
+        "rating": 4.9,
+        "tours": 32,
+        "about": "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. The iconic Eiffel Tower and 12th-century Gothic Notre-Dame cathedral define the city's skyline.",
+        "highlights": [
+            "Eiffel Tower and iconic landmarks",
+            "World-class museums (Louvre, Orsay)",
+            "Gourmet French cuisine",
+            "Fashion and shopping districts",
+            "Seine River cruises",
+            "Charming cafés and bistros"
+        ],
+        "bestTime": "April to June, September to October",
+        "currency": "Euro (EUR)",
+        "language": "French"
+    },
+    {
+        "id": 4,
+        "name": "Maldives",
+        "slug": "maldives",
+        "description": "Paradise on earth with pristine beaches and luxury resorts",
+        "image": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1200&q=80",
+        "rating": 5.0,
+        "tours": 15,
+        "about": "The Maldives is a tropical paradise in the Indian Ocean, composed of 26 ring-shaped atolls and over 1,000 coral islands. Known for its crystal-clear waters, luxury overwater bungalows, and incredible marine life, it's the ultimate destination for relaxation and underwater adventures.",
+        "highlights": [
+            "Luxury overwater villas",
+            "World-class diving and snorkeling",
+            "Private island resorts",
+            "Spa and wellness experiences",
+            "Romantic sunset cruises",
+            "Marine life encounters"
+        ],
+        "bestTime": "November to April (Dry Season)",
+        "currency": "Maldivian Rufiyaa (MVR), USD accepted",
+        "language": "Dhivehi, English"
+    },
+    {
+        "id": 5,
+        "name": "Tokyo, Japan",
+        "slug": "tokyo-japan",
+        "description": "Where ancient tradition meets cutting-edge technology",
+        "image": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80",
+        "rating": 4.8,
+        "tours": 28,
+        "about": "Tokyo, Japan's busy capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples. The city is known for its innovative technology, fashion, food culture, and as a global hub of commerce. Explore ancient shrines alongside futuristic architecture.",
+        "highlights": [
+            "Ancient temples and gardens",
+            "Cutting-edge technology districts",
+            "World-famous sushi and ramen",
+            "Shopping in Shibuya and Harajuku",
+            "Traditional tea ceremonies",
+            "Cherry blossom viewing"
+        ],
+        "bestTime": "March to May (Cherry Blossoms), September to November",
+        "currency": "Japanese Yen (JPY)",
+        "language": "Japanese"
+    },
+    {
+        "id": 6,
+        "name": "Santorini, Greece",
+        "slug": "santorini-greece",
+        "description": "Iconic sunsets and stunning Aegean Sea views",
+        "image": "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=1200&q=80",
+        "rating": 4.9,
+        "tours": 20,
+        "about": "Santorini is one of the Cyclades islands in the Aegean Sea. It's famous for dramatic views, stunning sunsets from Oia, whitewashed buildings perched on cliffs, and its unique volcanic beaches. The island offers a perfect blend of romance, history, and natural beauty.",
+        "highlights": [
+            "Iconic sunset views in Oia",
+            "White-washed cliff villages",
+            "Volcanic beaches (Red & Black)",
+            "Wine tasting tours",
+            "Ancient ruins of Akrotiri",
+            "Caldera boat cruises"
+        ],
+        "bestTime": "April to November",
+        "currency": "Euro (EUR)",
+        "language": "Greek"
+    }
+]

@@ -1,6 +1,6 @@
 # Travel AI Pro - Premium Tourism Frontend
 
-**Live Website**: [https://tourism-platform-gamma-three.vercel.app](https://tourism-platform-gamma-three.vercel.app)
+**Live Website**: [https://travel-ai-pro.onrender.com](https://travel-ai-pro.onrender.com)
 
 The official Next.js 15 frontend for the Travel AI Pro platform. Featuring a glassmorphic design, fluid animations, and a seamless admin dashboard.
 
@@ -34,21 +34,21 @@ graph TD
 
 ### 2. Install Dependencies
 ```bash
-cd frontend
+cd "Travel AI Pro"
 npm install
 ```
 
 ### 3. Environment Configuration
 Create a `.env.local` file:
 ```env
-NEXT_PUBLIC_API_URL=https://tourism-backend-vs0z.onrender.com
+NEXT_PUBLIC_API_URL=https://travel-ai-pro-backend.onrender.com
 ```
 
 ### 4. Run Development Server
 ```bash
 npm run dev
 ```
-The application will be live at `http://localhost:3000` (Local) or `https://tourism-platform-gamma-three.vercel.app` (Production)
+The application will be live at `http://localhost:3000` (Local) or `https://travel-ai-pro.onrender.com` (Production)
 
 ---
 
