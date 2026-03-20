@@ -21,8 +21,7 @@ export default function AdminLoginPage() {
         setLoading(true)
 
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://tourism-backend-vs0z.onrender.com';
-            const response = await fetch(`${apiUrl}/api/auth/login`, {
+            const response = await fetch('/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -33,11 +32,11 @@ export default function AdminLoginPage() {
             const data = await response.json()
 
             if (response.ok) {
-                localStorage.setItem('token', data.token)
-                localStorage.setItem('user', JSON.stringify(data.user))
+                localStorage.setItem('admin-token', data.token)
+                localStorage.setItem('admin-user', JSON.stringify(data.user))
                 router.push('/admin/dashboard')
             } else {
-                setError(data.message || 'Login failed')
+                setError(data.error || 'Login failed')
             }
         } catch (err) {
             setError('An error occurred. Please try again.')
