@@ -1,96 +1,46 @@
-# Tourism Platform
+# Travel AI Pro - Complete Tourism Solution
 
-A production-ready modern tourism website built with Next.js App Router, featuring premium dark mode UI, blog management system, and AI-powered imagery.
+**Live Frontend**: [https://travel-ai-pro.onrender.com](https://travel-ai-pro.onrender.com)  
+**Live Backend**: [https://travel-ai-pro-backend.onrender.com](https://travel-ai-pro-backend.onrender.com)
 
-## 🚀 Features
+A full-stack premium tourism platform featuring a Next.js 15 frontend and a Node.js/Express backend.
 
-- **Modern Dark UI** - Premium dark mode design with glassmorphism effects
-- **Blog System** - Full CRUD blog management with admin panel
-- **Responsive Design** - Works perfectly on all devices
-- **Smooth Animations** - Framer Motion powered animations
-- **SEO Optimized** - Comprehensive metadata and semantic HTML
-- **Admin Panel** - Secure authentication and blog management
+---
 
-## 🛠️ Tech Stack
+## 🏗️ Project Structure
 
-- Next.js 15 (App Router)
-- React 19
-- Tailwind CSS 3
-- Framer Motion
-- Lucide Icons
-- JSON File Storage
+This project is divided into two main modules:
 
-## 📦 Installation
+1.  **[Frontend (Travel AI Pro)](./Travel%20AI%20Pro/README.md)**: The user interface and admin dashboard built with Next.js, Framer Motion, and Tailwind CSS.
+2.  **[Backend (Backend)](./Backend/README.md)**: The RESTful API and database management built with Node.js, Express, and MongoDB.
 
+---
+
+## 🚀 Quick Start (Root)
+
+### 1. Install Everything
+Install dependencies for all modules simultaneously:
 ```bash
-# Install dependencies
-npm install
+npm run install:all
+```
 
-# Run development server
+### 2. Run the Platform
+Start both Frontend and Backend with one command:
+```bash
 npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
 ```
+- **Frontend**: [http://localhost:3000](http://localhost:3000)
+- **Backend**: [http://localhost:5000](http://localhost:5000)
 
-## 🔐 Admin Access
+---
 
-**URL:** `/admin/login`
+## � Author
+**Shreyash Patil**
+*Lead Architect & Developer*
 
-**Demo Credentials:**
-- Email: `admin@tourism.com`
-- Password: `admin123`
+For detailed technical documentation, please refer to the README files inside the respective `Travel AI Pro` and `Backend` folders.
 
-## 📁 Project Structure
-
-```
-├── app/                    # Next.js app directory
-│   ├── admin/             # Admin panel pages
-│   ├── blogs/             # Blog pages
-│   ├── api/               # API routes
-│   └── ...                # Other pages
-├── components/            # React components
-│   ├── layout/           # Layout components
-│   ├── home/             # Home page sections
-│   └── ui/               # UI components
-├── data/                 # JSON data storage
-└── public/               # Static assets
-```
-
-## 🎨 Design Features
-
-- **Glassmorphism** - Modern glass effect cards
-- **Gradient Accents** - Blue to cyan gradients
-- **Smooth Transitions** - Premium hover effects
-- **Dark Theme** - Consistent dark mode throughout
-- **Premium Typography** - Inter font family
-
-## 📝 Blog Management
-
-The admin dashboard allows you to:
-- ✅ Create new blog posts
-- ✅ Edit existing blogs
-- ✅ Delete blogs
-- ✅ Preview blog content
-
-## 🌐 Deployment
-
-This project is ready for deployment on Vercel, Netlify, or any Node.js hosting platform.
-
-```bash
-# Build the project
-npm run build
-
-# The output will be in .next/ directory
-```
+---
 
 ## 📄 License
-
-Built for portfolio and commercial use.
-
-## 👨‍💻 Author
-
-Shreyash Patil
+This project is licensed under the MIT License.
