@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button'
 import Input from '@/components/ui/Input'
 import { Plus, Edit, Trash2, LogOut, BookOpen, Users, MapPin, CheckCircle, XCircle } from 'lucide-react'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://tourism-backend-vs0z.onrender.com';
 
 export default function AdminDashboard() {
     const router = useRouter()

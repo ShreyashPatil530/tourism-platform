@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button'
 
 export async function generateStaticParams() {
     try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://tourism-backend-vs0z.onrender.com';
         const res = await fetch(`${apiUrl}/api/blogs`);
         const blogs = await res.json();
         return blogs.map((blog) => ({

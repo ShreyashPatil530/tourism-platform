@@ -51,7 +51,7 @@ export default function BookingForm({ destinationName, packageName }) {
         setSuccess(false)
 
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://tourism-backend-vs0z.onrender.com';
             const response = await fetch(`${apiUrl}/api/bookings`, {
                 method: 'POST',
                 headers: {
