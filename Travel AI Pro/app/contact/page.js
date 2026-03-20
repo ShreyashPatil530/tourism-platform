@@ -23,7 +23,7 @@ export default function ContactPage() {
         setSubmitStatus({ type: '', message: '' })
 
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://travel-ai-pro-backend.onrender.com';
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://tourism-backend-vs0z.onrender.com';
             const response = await fetch(`${apiUrl}/api/contact`, {
                 method: 'POST',
                 headers: {

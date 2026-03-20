@@ -10,7 +10,7 @@ export default function BlogsPage() {
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://travel-ai-pro-backend.onrender.com';
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://tourism-backend-vs0z.onrender.com';
         fetch(`${apiUrl}/api/blogs`)
             .then((res) => res.json())
             .then((data) => setBlogs(data))

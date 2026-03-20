@@ -21,7 +21,7 @@ export default function LoginPage() {
         setLoading(true);
 
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://travel-ai-pro-backend.onrender.com';
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://tourism-backend-vs0z.onrender.com';
             const res = await fetch(`${apiUrl}/api/auth/login`, {
                 method: 'POST',
                 headers: {
